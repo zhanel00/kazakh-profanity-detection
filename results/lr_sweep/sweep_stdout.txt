@@ -1,0 +1,23 @@
+{"epoch": 1, "train_loss": 0.6176187512995321, "val_loss": 0.7964881529814787, "val_f1@0.5": 0.6584362139917695, "val_precision@0.5": 0.9195402298850575, "val_recall@0.5": 0.5128205128205128, "seconds": 64.5}
+  -> new best (val F1=0.6584), saved to artifacts/model_lr3e-5
+{"epoch": 2, "train_loss": 0.3802573056302116, "val_loss": 0.26905357922874096, "val_f1@0.5": 0.9073482428115016, "val_precision@0.5": 0.9044585987261147, "val_recall@0.5": 0.9102564102564102, "seconds": 64.2}
+  -> new best (val F1=0.9073), saved to artifacts/model_lr3e-5
+{"epoch": 3, "train_loss": 0.244944535690961, "val_loss": 0.2361782817808139, "val_f1@0.5": 0.9245283018867925, "val_precision@0.5": 0.9074074074074074, "val_recall@0.5": 0.9423076923076923, "seconds": 63.7}
+  -> new best (val F1=0.9245), saved to artifacts/model_lr3e-5
+{"epoch": 4, "train_loss": 0.1720482632945162, "val_loss": 0.3673245897325595, "val_f1@0.5": 0.9299363057324841, "val_precision@0.5": 0.9240506329113924, "val_recall@0.5": 0.9358974358974359, "seconds": 64.9}
+  -> new best (val F1=0.9299), saved to artifacts/model_lr3e-5
+{"epoch": 5, "train_loss": 0.10639731973134087, "val_loss": 0.468627998642898, "val_f1@0.5": 0.9255663430420712, "val_precision@0.5": 0.934640522875817, "val_recall@0.5": 0.9166666666666666, "seconds": 63.8}
+{"epoch": 6, "train_loss": 0.0835242396969528, "val_loss": 0.5296299515629327, "val_f1@0.5": 0.9260450160771704, "val_precision@0.5": 0.9290322580645162, "val_recall@0.5": 0.9230769230769231, "seconds": 64.0}
+early stopping
+best epoch=4; tuned threshold=0.43 (val F1=0.9367)
+{"epoch": 1, "train_loss": 0.6388588347766972, "val_loss": 0.643330160296285, "val_f1@0.5": 0.5714285714285714, "val_precision@0.5": 0.8292682926829268, "val_recall@0.5": 0.4358974358974359, "seconds": 64.3}
+  -> new best (val F1=0.5714), saved to artifacts/model_lr5e-5
+{"epoch": 2, "train_loss": 0.490730560137124, "val_loss": 0.33131438967332877, "val_f1@0.5": 0.9013157894736842, "val_precision@0.5": 0.9256756756756757, "val_recall@0.5": 0.8782051282051282, "seconds": 64.2}
+  -> new best (val F1=0.9013), saved to artifacts/model_lr5e-5
+{"epoch": 3, "train_loss": 0.2812391646630779, "val_loss": 0.36004141907079673, "val_f1@0.5": 0.926984126984127, "val_precision@0.5": 0.9182389937106918, "val_recall@0.5": 0.9358974358974359, "seconds": 63.6}
+  -> new best (val F1=0.9270), saved to artifacts/model_lr5e-5
+{"epoch": 4, "train_loss": 0.18513103891046176, "val_loss": 0.45322345822430304, "val_f1@0.5": 0.9260450160771704, "val_precision@0.5": 0.9290322580645162, "val_recall@0.5": 0.9230769230769231, "seconds": 64.8}
+{"epoch": 5, "train_loss": 0.14621950067208397, "val_loss": 0.4600973017356228, "val_f1@0.5": 0.9274447949526814, "val_precision@0.5": 0.9130434782608695, "val_recall@0.5": 0.9423076923076923, "seconds": 63.8}
+  -> new best (val F1=0.9274), saved to artifacts/model_lr5e-5
+{"epoch": 6, "train_loss": 0.09338268664476898, "val_loss": 0.4938228333095279, "val_f1@0.5": 0.9260450160771704, "val_precision@0.5": 0.9290322580645162, "val_recall@0.5": 0.9230769230769231, "seconds": 64.5}
+best epoch=5; tuned threshold=0.49 (val F1=0.9308)

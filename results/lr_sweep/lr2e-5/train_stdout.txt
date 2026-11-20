@@ -1,0 +1,38 @@
+device: mps
+train=2520  val=265
+trainable params: 86.0M of 278.0M
+  epoch 1 step 40/158 loss=0.7065 (17s)
+  epoch 1 step 80/158 loss=0.6766 (32s)
+  epoch 1 step 120/158 loss=0.6525 (48s)
+{"epoch": 1, "train_loss": 0.6185085132152219, "val_loss": 0.5072523753265358, "val_f1@0.5": 0.8014440433212996, "val_precision@0.5": 0.9173553719008265, "val_recall@0.5": 0.7115384615384616, "seconds": 64.7}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.74it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.74it/s]
+  -> new best (val F1=0.8014), saved to artifacts/model
+  epoch 2 step 40/158 loss=0.4296 (16s)
+  epoch 2 step 80/158 loss=0.4352 (33s)
+  epoch 2 step 120/158 loss=0.4070 (48s)
+{"epoch": 2, "train_loss": 0.4020381285514258, "val_loss": 0.27211055283154145, "val_f1@0.5": 0.8924050632911392, "val_precision@0.5": 0.88125, "val_recall@0.5": 0.9038461538461539, "seconds": 64.3}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.81it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.81it/s]
+  -> new best (val F1=0.8924), saved to artifacts/model
+  epoch 3 step 40/158 loss=0.2588 (16s)
+  epoch 3 step 80/158 loss=0.2882 (32s)
+  epoch 3 step 120/158 loss=0.2703 (48s)
+{"epoch": 3, "train_loss": 0.26903174394340834, "val_loss": 0.33381420585419824, "val_f1@0.5": 0.9036544850498339, "val_precision@0.5": 0.9379310344827586, "val_recall@0.5": 0.8717948717948718, "seconds": 63.7}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]
+  -> new best (val F1=0.9037), saved to artifacts/model
+  epoch 4 step 40/158 loss=0.1820 (17s)
+  epoch 4 step 80/158 loss=0.1791 (32s)
+  epoch 4 step 120/158 loss=0.2022 (48s)
+{"epoch": 4, "train_loss": 0.19000448340762266, "val_loss": 0.42643952281864056, "val_f1@0.5": 0.9144736842105263, "val_precision@0.5": 0.9391891891891891, "val_recall@0.5": 0.8910256410256411, "seconds": 64.9}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.90it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.90it/s]
+  -> new best (val F1=0.9145), saved to artifacts/model
+  epoch 5 step 40/158 loss=0.1291 (17s)
+  epoch 5 step 80/158 loss=0.1272 (33s)
+  epoch 5 step 120/158 loss=0.1420 (48s)
+{"epoch": 5, "train_loss": 0.13681669048434478, "val_loss": 0.4869371210512256, "val_f1@0.5": 0.9148264984227129, "val_precision@0.5": 0.9006211180124224, "val_recall@0.5": 0.9294871794871795, "seconds": 64.1}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.86it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.86it/s]
+  -> new best (val F1=0.9148), saved to artifacts/model
+  epoch 6 step 40/158 loss=0.1179 (15s)
+  epoch 6 step 80/158 loss=0.1134 (31s)
+  epoch 6 step 120/158 loss=0.1065 (46s)
+{"epoch": 6, "train_loss": 0.1160583381793061, "val_loss": 0.5352903296020272, "val_f1@0.5": 0.9131832797427653, "val_precision@0.5": 0.9161290322580645, "val_recall@0.5": 0.9102564102564102, "seconds": 64.2}
+best epoch=5; tuned threshold=0.08 (val F1=0.9288)

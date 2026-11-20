@@ -1,0 +1,39 @@
+{
+  "raw_rows": 3061,
+  "raw_label_counts": {
+    "0": 1522,
+    "1": 1539
+  },
+  "rows_anonymised": 24,
+  "labels_revised": {
+    "0->1": 11,
+    "1->0": 8
+  },
+  "exact_duplicates_removed": 11,
+  "near_duplicate_groups(size>1)": 14,
+  "rows_in_near_duplicate_groups": 31,
+  "split_strategy": "provided split column, near-duplicate groups moved to their majority split",
+  "rows_moved_to_fix_leakage": 6,
+  "final_rows": 3050,
+  "splits": {
+    "train": {
+      "n": 2520,
+      "label_0": 1299,
+      "label_1": 1221,
+      "profane_share": 0.485
+    },
+    "val": {
+      "n": 265,
+      "label_0": 109,
+      "label_1": 156,
+      "profane_share": 0.589
+    },
+    "test": {
+      "n": 265,
+      "label_0": 109,
+      "label_1": 156,
+      "profane_share": 0.589
+    }
+  },
+  "seed": 42
+}

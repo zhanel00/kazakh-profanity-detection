@@ -1,0 +1,54 @@
+{
+  "at_0.5": {
+    "n": 265,
+    "threshold": 0.5,
+    "precision_profane": 0.9006211180124224,
+    "recall_profane": 0.9294871794871795,
+    "f1_profane": 0.9148264984227129,
+    "accuracy": 0.8981132075471698,
+    "macro_f1": 0.8940329675212155,
+    "confusion_matrix": {
+      "tn": 93,
+      "fp": 16,
+      "fn": 11,
+      "tp": 145
+    }
+  },
+  "at_tuned_threshold": {
+    "n": 265,
+    "threshold": 0.24,
+    "precision_profane": 0.896969696969697,
+    "recall_profane": 0.9487179487179487,
+    "f1_profane": 0.9221183800623053,
+    "accuracy": 0.9056603773584906,
+    "macro_f1": 0.9012505775909613,
+    "confusion_matrix": {
+      "tn": 92,
+      "fp": 17,
+      "fn": 8,
+      "tp": 148
+    }
+  },
+  "config": {
+    "seed": 42,
+    "raw_csv": "data/raw/kazakh_profanity_share.csv",
+    "label_revisions": "data/label_revisions.csv",
+    "processed_dir": "data/processed",
+    "near_duplicate_threshold": 0.9,
+    "model_name": "FacebookAI/xlm-roberta-base",
+    "output_dir": "artifacts/model",
+    "results_dir": "results",
+    "max_length": 128,
+    "window_stride": 64,
+    "batch_size": 16,
+    "eval_batch_size": 32,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "num_epochs": 6,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "freeze_word_embeddings": true,
+    "early_stopping_patience": 2
+  },
+  "best_epoch": 5
+}

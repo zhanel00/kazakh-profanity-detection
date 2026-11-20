@@ -1,0 +1,9 @@
+# trained weights are hosted on the Hugging Face Hub (too large for GitHub)
+artifacts/
+# raw file shared by the instructor - see data/raw/README.md
+data/raw/*.csv
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.env
