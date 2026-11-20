@@ -72,11 +72,17 @@ and the mild insult *ит* (“dog”). These are listed as limitations below.
 
 ### Label audit
 The labels come from an existing dataset, so I checked that they match these rules.
-1. I matched every row against a lexicon of about 90 profane stems.
+1. I matched every row against a lexicon of 85 stems (`python -m src.audit_labels`).
+   * The lexicon is a hand-compiled list of common Kazakh and Russian obscene stems, strong slurs and
+     their spelling variants (Latin script, Russian keyboard, distortions), prepared with AI assistance.
+   * It is deliberately broad (it includes ambiguous words such as *мал, ит, шайтан*), because it only
+     picks rows for a human to read. It is **not** a model feature and is not used in training or inference.
 2. I read every **label-0 row that contained a stem** (157 rows) and every **label-1 row that contained
-   none** (246 rows).
-3. I changed 19 labels (0.6% of the data). Each change and its reason is in
-   `data/label_revisions.csv`, and `prepare_data.py` applies them.
+   none** (246 rows). For ambiguous stems I also checked that the same word is labelled consistently,
+   e.g. *далбаса* (“sham”) was labelled 0 in 13 of its 16 rows.
+3. I changed 19 labels (0.6% of the data): 17 came from the two groups in step 2 and 2 from the
+   consistency check (*далбаса*). Each change and its reason is in `data/label_revisions.csv`, and
+   `prepare_data.py` applies them.
 
 | change | count | examples |
 |---|---|---|
@@ -330,6 +336,7 @@ python -m src.baseline       # optional reference model
 | file | role |
 |---|---|
 | `src/text_utils.py` | anonymisation, normalisation, duplicate key |
+| `src/audit_labels.py` | lexicon search that picked the rows for the manual label audit |
 | `src/prepare_data.py` | cleaning, label revisions, de-duplication, leak-free splits |
 | `src/train.py` | fine-tuning loop, best-epoch selection, threshold tuning |
 | `src/model_utils.py` | seeding, device, loading, sliding-window prediction |
@@ -356,8 +363,15 @@ hf upload Zhanel00/kazakh-profanity-xlmr artifacts/model .
 ## Acknowledgement of assistance
 * **AI assistance.** The code structure, the label audit and parts of this README were drafted with an
   AI assistant (Claude).
-* **My own contributions:** <describe: e.g. checking every label revision, choosing the labelling rules,
-  running the training and evaluation, reviewing the error analysis>.
+* **My own contributions:**
+  * defined the task setup and directed the work: which dataset to use, the 0/1 labelling policy, and
+    the decision to fine-tune XLM-R locally on a Mac;
+  * when the first full fine-tune ran out of memory, chose to restart it with a lighter setup (frozen
+    word embeddings, 128-token inputs), and ran the training, learning-rate sweep and test evaluation on
+    my machine;
+  * reviewed the 19 label revisions in `data/label_revisions.csv` and the error analysis;
+  * published the code on GitHub and the trained model on the Hugging Face Hub, and prepared and
+    presented the project defense.
 * I have read and understand all submitted code.
-* **Dataset:** KazSAnDRA (ISSAI, Nazarbayev University), subset provided by the course instructor.
+* **Dataset:** KazSAnDRA (ISSAI, Nazarbayev University), subset provided by a classmate.
 * **Model:** `FacebookAI/xlm-roberta-base` (Conneau et al., 2020).
