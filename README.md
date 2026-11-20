@@ -12,7 +12,7 @@ The model reads one Kazakh review or comment about a product or app and predicts
 It also returns **P(profane)**, a probability, together with the decision threshold it used.
 
 **Model:** `xlm-roberta-base`, fine-tuned for sequence classification.
-**Trained weights:** https://huggingface.co/<your-hf-user>/kazakh-profanity-xlmr (see [Model access](#model-access)).
+**Trained weights:** https://huggingface.co/Zhanel00/kazakh-profanity-xlmr (see [Model access](#model-access)).
 
 | Test set (n = 265) | Precision (profane) | Recall (profane) | F1 (profane) | Accuracy |
 |---|---|---|---|---|
@@ -302,12 +302,12 @@ It works in a fresh runtime.
 
 ### Predict with the trained model (no retraining)
 ```bash
-python -m src.predict "Өте керемет ойын, ұнады!" "Қотақбас ойын екен" --model <your-hf-user>/kazakh-profanity-xlmr
-python -m src.predict --model <your-hf-user>/kazakh-profanity-xlmr    # interactive: type comments
+python -m src.predict "Өте керемет ойын, ұнады!" "Қотақбас ойын екен" --model Zhanel00/kazakh-profanity-xlmr
+python -m src.predict --model Zhanel00/kazakh-profanity-xlmr    # interactive: type comments
 ```
 ```python
 from src.predict import Predictor
-clf = Predictor("<your-hf-user>/kazakh-profanity-xlmr")   # or "artifacts/model"
+clf = Predictor("Zhanel00/kazakh-profanity-xlmr")   # or "artifacts/model"
 clf("Мал ойын тартылмайды")
 # {'text': 'Мал ойын тартылмайды', 'label': 1, 'prob_profane': 0.999, 'threshold': 0.43}
 ```
@@ -341,14 +341,14 @@ python -m src.baseline       # optional reference model
 
 ### Model access
 The fine-tuned weights (1.1 GB) are too large for GitHub and are hosted on the Hugging Face Hub:
-**https://huggingface.co/<your-hf-user>/kazakh-profanity-xlmr**.
+**https://huggingface.co/Zhanel00/kazakh-profanity-xlmr**.
 The repo contains the weights, the tokenizer files and `inference_config.json` (threshold 0.43, window
 128/64), so `Predictor("<hub id>")` works directly.
 
 To upload your own copy after training:
 ```bash
 hf auth login                       # paste a WRITE token; never commit it
-hf upload <your-hf-user>/kazakh-profanity-xlmr artifacts/model .
+hf upload Zhanel00/kazakh-profanity-xlmr artifacts/model .
 ```
 
 ---
