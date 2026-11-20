@@ -1,7 +1,7 @@
 # Raw data (not committed)
 
 Put the course file `kazakh_profanity_share.csv` here
-(`data/raw/kazakh_profanity_share.csv`). It was shared by the instructor on Teams.
+(`data/raw/kazakh_profanity_share.csv`). It was shared by a classmate.
 
 Columns: `kazsandra_id, text, label, split`, with 3,061 rows. The texts come from
 **KazSAnDRA** (Kazakh Sentiment Analysis Dataset of Reviews and Attitudes, ISSAI,

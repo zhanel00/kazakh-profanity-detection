@@ -23,7 +23,7 @@ It also returns **P(profane)**, a probability, together with the decision thresh
 ## 1. Data
 
 ### Source
-The file `kazakh_profanity_share.csv` was provided by the instructor and contains 3,061 rows with
+The file `kazakh_profanity_share.csv` was provided by a classmate and contains 3,061 rows with
 columns `kazsandra_id, text, label, split`.
 The texts are a subset of **KazSAnDRA**, the Kazakh Sentiment Analysis Dataset of Reviews and Attitudes
 (ISSAI; Yeshpanov & Varol, LREC-COLING 2024, <https://huggingface.co/datasets/issai/kazsandra>).
@@ -114,7 +114,7 @@ Labels were never changed after looking at test-set predictions (see error 1 bel
    into one group, using union-find. This found 14 groups covering 31 rows, e.g.
    `Қотақ ойын сука ам` and `Қотақ сука ам`.
    This TF-IDF is only a de-duplication tool and is never used as a model feature.
-5. **Splits.** I kept the split column from the instructor's file but **repaired leakage**: each
+5. **Splits.** I kept the split column from the provided file but **repaired leakage**: each
    near-duplicate group is moved into its majority split, which moved 6 rows. The script asserts that
    no group spans two splits.
    * `--resplit` instead creates a fresh stratified group split (80/10/10).
