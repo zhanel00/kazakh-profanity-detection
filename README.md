@@ -289,8 +289,12 @@ fitted on train only) gets val F1 0.947 / test F1 0.911.
   of which only 1 is profane, so performance on real product-review traffic may differ.
 * Mild insults such as *ит, жынды, чорт* follow the existing dataset conventions; another moderator
   policy might label them differently.
-* MPS/GPU training is not bit-wise deterministic even with a fixed seed, so a re-run can give slightly
-  different numbers.
+* **Run-to-run variance.** MPS/GPU training is not deterministic even with a fixed seed.
+  * Inference is deterministic: the published model reproduces the test numbers above exactly.
+  * A second full training run with the same config (`notebooks/reproduce_experiments.ipynb`) gave test
+    F1 **0.912** (best epoch 5, threshold 0.50, 23 FP / 6 FN) instead of 0.931.
+  * This variance (about 0.02 F1) is as large as the gap to the baseline, so the XLM-R vs baseline comparison
+    is not conclusive. Averaging several seeds would be the next step.
 
 ---
 
@@ -333,8 +337,16 @@ python -m src.train          # about 7 min on Apple M5; a few minutes on a Colab
 python -m src.evaluate       # one test-set evaluation → results/
 python -m src.baseline       # optional reference model
 ```
+**Notebook:** `notebooks/reproduce_experiments.ipynb` runs every experiment step by step (data and leakage
+check, baseline, exact re-check of the published model, re-training, optional lr sweep, threshold curve,
+confusion matrices, bootstrap CI, error analysis) and compares the numbers with the submitted ones.
+It writes only to `repro/` (git-ignored) and runs in Colab (T4 GPU) or locally.
+The committed copy contains the outputs of a full local run.
+
 | file | role |
 |---|---|
+| `notebooks/reproduce_experiments.ipynb` | step-by-step reproduction of all experiments |
+| `notebooks/colab_demo.ipynb` | quick demo: predict with the published model |
 | `src/text_utils.py` | anonymisation, normalisation, duplicate key |
 | `src/audit_labels.py` | lexicon search that picked the rows for the manual label audit |
 | `src/prepare_data.py` | cleaning, label revisions, de-duplication, leak-free splits |

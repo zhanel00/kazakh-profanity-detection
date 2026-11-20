@@ -5,6 +5,7 @@
 Shows how much the fine-tuned transformer adds over a purely lexical model.
 The TF-IDF vocabulary is fitted on the TRAIN split only.
 """
+import argparse
 import json
 from pathlib import Path
 
@@ -18,7 +19,9 @@ from .text_utils import normalize
 
 
 def main():
-    cfg = json.loads(Path("config.json").read_text())
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", default="config.json")
+    cfg = json.loads(Path(ap.parse_args().config).read_text())
     d = Path(cfg["processed_dir"])
     tr, va, te = (pd.read_csv(d / f"{s}.csv") for s in ("train", "val", "test"))
     clf = make_pipeline(

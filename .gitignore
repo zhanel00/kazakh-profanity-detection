@@ -7,3 +7,5 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 .env
+# outputs of notebooks/reproduce_experiments.ipynb
+repro/
