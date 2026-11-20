@@ -292,7 +292,7 @@ fitted on train only) gets val F1 0.947 / test F1 0.911.
 
 ### Setup
 ```bash
-git clone https://github.com/<your-github-user>/kazakh-profanity-detection.git
+git clone https://github.com/zhanel00/kazakh-profanity-detection.git
 cd kazakh-profanity-detection
 python -m venv .venv && source .venv/bin/activate      # Python 3.10+ (developed on 3.13)
 pip install -r requirements.txt
